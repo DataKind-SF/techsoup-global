@@ -4,7 +4,9 @@ rm(list=ls(all=TRUE)[!(ls(all=TRUE) %in% c("global.vars",global.vars()))])
 #rm(list=ls(all=TRUE)[!(ls(all=TRUE) %in% c("global.vars",global.vars()) | !(ls(all=TRUE) %in% c("global.vars",global.vars())) )])
 assign("last.warning",NULL,envir=baseenv())
 
-#.ts.data <- data.table(read.csv("./data/datakind_extract_keyfields.csv",stringsAsFactors=FALSE))
-.ts.data <- data.table(read.csv("./data/sample_dk_extract.csv",stringsAsFactors=FALSE))
-.ts.data[,Transaction_Date:=as.POSIXct(Transaction_Date)]
-.ts.data <- .ts.data[!is.na(Budget)]
+#.ts.data <- data.table(read.csv("../data/techsoup_datakind_sample.csv",stringsAsFactors=FALSE))
+.ts.data <- data.table(read.csv("../data/techsoup_datakind_details_wide.csv",stringsAsFactors=FALSE))
+
+.ts.data[,transaction_date:=as.POSIXct(reg_date)]
+.ts.data[,reg_date:=as.POSIXct(reg_date)]
+.ts.data <- .ts.data[!is.na(budget) & budget>=0]
