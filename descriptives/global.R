@@ -1,6 +1,5 @@
 
 ## Does the fraction of non-photos in a group effect the communicativity of photoed PPTs
-
 rm(list=ls(all=TRUE)[!(ls(all=TRUE) %in% c("global.vars",global.vars()))])
 #rm(list=ls(all=TRUE)[!(ls(all=TRUE) %in% c("global.vars",global.vars()) | !(ls(all=TRUE) %in% c("global.vars",global.vars())) )])
 assign("last.warning",NULL,envir=baseenv())
