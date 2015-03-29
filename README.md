@@ -22,3 +22,4 @@ slack domain: datakind-sf-bayarea
 ## Clustering
 
 ## Recommender
+<img src="./fig/improved_recommendations.png" height="330" width="370">
